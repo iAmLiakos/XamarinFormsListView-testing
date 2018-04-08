@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UserList"
+             x:Class="UserList.MainPage"
+             x:Name="UserPage">
+    <StackLayout BackgroundColor="WhiteSmoke" Padding="10" Spacing="5">
+        <ListView BackgroundColor="AntiqueWhite" Header="List" ItemsSource="{Binding OrderedUsers}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell TextColor="Black" Text="{Binding FullName}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Name"/>
+        <Entry x:Name="name" Placeholder="Your Name" Text="{Binding name, Mode=TwoWay}"/>
+        <Label Text="Surname"/>
+        <Entry x:Name="surname" Placeholder="Your Username" Text="{Binding surname, Mode=TwoWay}"/>
+        <Button Text="Save" Command="{Binding SaveUserFromXML}"/>
+        <Label Text="Write FullName to Delete" FontSize="Micro"/>
+        <Entry x:Name="fullname" Text="{Binding fullname}"/>
+        <Button Text="Delete" CommandParameter="{Binding FullName}" Command="{Binding DeleteUserFromXAML}"/>
+    </StackLayout>
+</ContentPage>
