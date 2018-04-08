@@ -10,26 +10,25 @@ using Xamarin.Forms;
 
 namespace UserList
 {
-	public partial class MainPage : ContentPage
-	{
+    public partial class MainPage : ContentPage
+    {
         public ObservableCollection<User> DisplayUsers { get; set; }
 
         public MainPage()
-		{
-
-			InitializeComponent();
+        {
+            InitializeComponent();
             BindingContext = new UsersViewModel();
-		}
+        }
 
         private void DeleteButtonClicked(object sender, EventArgs e)
         {
-            
+
         }
 
         private void SaveButtonClicked(object sender, EventArgs e)
         {
             //code-behind logic
-            
+
         }
 
         private void name_TextChanged(object sender, TextChangedEventArgs e)
